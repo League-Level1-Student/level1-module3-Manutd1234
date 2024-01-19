@@ -41,7 +41,7 @@ static float calculateArea(float width, float height){ // code }
 				  Athlete jim = new Athlete("Jim", 10);
 		  Athlete amy = new Athlete("Amy", 6);
 
-		  System.out.println(jim.name);           // prints "Jim"
+		  System.out.@println(jim.name);           // prints "Jim"
 		  System.out.println(amy.name);           // prints "Amy"
 		  System.out.println(jim.raceStartTime);  // prints "9.00am"
 		  System.out.println(amy.raceStartTime);  // prints "9.00am"
