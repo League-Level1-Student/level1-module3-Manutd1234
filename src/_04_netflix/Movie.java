@@ -62,4 +62,11 @@ public class Movie implements Comparable<Movie> {
 		// return this.stars - compareQuantity; //ascending order
 		return compareQuantity - this.stars; // descending order
 	}
+
+	public static Object get(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 }
