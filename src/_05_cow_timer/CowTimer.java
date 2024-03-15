@@ -14,7 +14,7 @@ import game_tools.Sound;
  *    For example, if the count down seconds is 10, the console should print
  *    the remaining seconds with a 1 second delay between each print:
  *    10
- *    9
+ *	  9
  *    8
  *    ...
  * 
@@ -26,17 +26,27 @@ import game_tools.Sound;
  */
 public class CowTimer {
     private int seconds;
-
-    public void setTime(int seconds) {
+    CowTimer cTimer = new CowTimer();
+    public int time;
+    public CowTimer(int timer) {
+    	this.time = time;
+    }
+    public CowTimer() {
+		// TODO Auto-generated constructor stub
+	}
+	public void setTime(int seconds) {
         this.seconds = seconds;
         System.out.println("Cow time set to " + this.seconds + " seconds.");
     }
 
     public void start() throws InterruptedException {
-        
+        Thread.sleep(10);
+      
     }
 
     public void playSound(final String file) {
+    	moo.wav soundfile = new moo.wav();
+    	
         String fileName = "_05_cow_timer/" + file;
         Sound sound = new Sound(fileName);
         sound.play();
