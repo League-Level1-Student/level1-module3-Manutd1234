@@ -1,5 +1,7 @@
 package _05_cow_timer;
 
+import java.io.IOException;
+
 import game_tools.Sound;
 
 /*
@@ -26,10 +28,8 @@ import game_tools.Sound;
  */
 public class CowTimer {
     private int seconds;
-    CowTimer cTimer = new CowTimer();
-    public int time;
     public CowTimer(int timer) {
-    	this.time = time;
+    	this.seconds = timer;
     }
     public CowTimer() {
 		// TODO Auto-generated constructor stub
@@ -39,13 +39,26 @@ public class CowTimer {
         System.out.println("Cow time set to " + this.seconds + " seconds.");
     }
 
-    public void start() throws InterruptedException {
-        Thread.sleep(10);
+    public void start() throws InterruptedException, IOException {
+      for(int i = seconds; i > 0 ; i--) {
+    	  System.out.println(i);
+    	 if(i<seconds/2) {
+    		 Thread.sleep(500);
+    	 }else {
+    		 Thread.sleep(1000);
+    	 }
+    	  playSound("Pop.wav");
+    	  Runtime.getRuntime().exec("say "+i).waitFor();
+      }
+      playSound("crash.wav");
+     
+    
+        
       
     }
 
     public void playSound(final String file) {
-    	moo.wav soundfile = new moo.wav();
+    	
     	
         String fileName = "_05_cow_timer/" + file;
         Sound sound = new Sound(fileName);
